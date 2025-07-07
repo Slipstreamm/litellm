@@ -47,3 +47,5 @@ class RefreshAPIKeyError(GithubCopilotError):
 
 class GetAPIKeyError(GithubCopilotError):
     pass
+class AuthManagerError(GithubCopilotError):
+    pass

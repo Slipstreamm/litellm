@@ -1,4 +1,4 @@
-from typing import Optional, Tuple
+from typing import Any, Dict, Optional, Tuple
 
 from litellm.exceptions import AuthenticationError
 from litellm.llms.openai.openai import OpenAIConfig
@@ -9,14 +9,16 @@ from ..common_utils import GetAPIKeyError
 
 class GithubCopilotConfig(OpenAIConfig):
     GITHUB_COPILOT_API_BASE = "https://api.githubcopilot.com"
+
     def __init__(
         self,
         api_key: Optional[str] = None,
         api_base: Optional[str] = None,
         custom_llm_provider: str = "openai",
+        auth_info: Optional[Dict[str, Any]] = None,
     ) -> None:
         super().__init__()
-        self.authenticator = Authenticator()
+        self.authenticator = Authenticator(auth_info=auth_info)
 
     def _get_openai_compatible_provider_info(
         self,
