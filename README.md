@@ -55,7 +55,7 @@ Support for more providers. Missing a provider or LLM Platform, raise a [feature
 </a>
 
 ```shell
-pip install litellm
+pip install litellm-slipstream-fork
 ```
 
 ```python
@@ -219,7 +219,7 @@ The proxy provides:
 ## Quick Start Proxy - CLI
 
 ```shell
-pip install 'litellm[proxy]'
+pip install 'litellm-slipstream-fork[proxy]'
 ```
 
 ### Step 1: Start litellm proxy

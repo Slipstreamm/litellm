@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "litellm"
+name = "litellm-slipstream-fork"
 version = "1.74.0"
 description = "Library to easily interface with LLM API providers"
 authors = ["BerriAI"]
