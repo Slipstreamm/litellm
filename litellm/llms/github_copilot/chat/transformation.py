@@ -46,7 +46,13 @@ class GithubCopilotConfig(OpenAIConfig):
         import litellm
         disable_copilot_system_to_assistant = litellm.disable_copilot_system_to_assistant 
         if not disable_copilot_system_to_assistant:
+            transformed_messages = []
             for message in messages:
                 if "role" in message and message["role"] == "system":
-                    message["role"] = "assistant"
+                    new_message = dict(message)
+                    new_message["role"] = "assistant"
+                    transformed_messages.append(new_message)
+                else:
+                    transformed_messages.append(message)
+            return transformed_messages
         return messages
